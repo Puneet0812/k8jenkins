@@ -14,10 +14,15 @@
         name: jenkins
         state: present
 
+    - name: Apply Jenkins PVC
+      command: kubectl apply -f jenkins-pvc.yaml -n jenkins
+
     - name: Apply Jenkins Deployment
       command: kubectl apply -f jenkins.yaml -n jenkins
 
     - name: Apply Jenkins Service
       command: kubectl apply -f jenkins-service.yaml -n jenkins
+
+
 
 
